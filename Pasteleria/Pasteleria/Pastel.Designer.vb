@@ -60,16 +60,13 @@ Partial Class Pastel
         Me.Label15 = New System.Windows.Forms.Label
         Me.TxtIdPastel = New System.Windows.Forms.TextBox
         Me.Label29 = New System.Windows.Forms.Label
-        Me.GBox_Variables = New System.Windows.Forms.GroupBox
         Me.GBox_Pastel.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        Me.GBox_Variables.SuspendLayout()
         Me.SuspendLayout()
         '
         'GBox_Pastel
         '
         Me.GBox_Pastel.BackColor = System.Drawing.Color.Navy
-        Me.GBox_Pastel.Controls.Add(Me.GBox_Variables)
         Me.GBox_Pastel.Controls.Add(Me.TxtPrecio)
         Me.GBox_Pastel.Controls.Add(Me.Label2)
         Me.GBox_Pastel.Controls.Add(Me.TxtDetalle)
@@ -87,7 +84,7 @@ Partial Class Pastel
         Me.GBox_Pastel.Controls.Add(Me.Label15)
         Me.GBox_Pastel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GBox_Pastel.ForeColor = System.Drawing.Color.LightGray
-        Me.GBox_Pastel.Location = New System.Drawing.Point(12, 12)
+        Me.GBox_Pastel.Location = New System.Drawing.Point(12, 32)
         Me.GBox_Pastel.Name = "GBox_Pastel"
         Me.GBox_Pastel.Size = New System.Drawing.Size(547, 376)
         Me.GBox_Pastel.TabIndex = 19
@@ -444,38 +441,28 @@ Partial Class Pastel
         '
         Me.TxtIdPastel.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.TxtIdPastel.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.TxtIdPastel.Location = New System.Drawing.Point(67, 13)
+        Me.TxtIdPastel.Location = New System.Drawing.Point(217, 6)
         Me.TxtIdPastel.Name = "TxtIdPastel"
         Me.TxtIdPastel.ReadOnly = True
-        Me.TxtIdPastel.Size = New System.Drawing.Size(50, 21)
+        Me.TxtIdPastel.Size = New System.Drawing.Size(50, 20)
         Me.TxtIdPastel.TabIndex = 30
         '
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(6, 16)
+        Me.Label29.Location = New System.Drawing.Point(156, 9)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(68, 15)
+        Me.Label29.Size = New System.Drawing.Size(53, 13)
         Me.Label29.TabIndex = 29
         Me.Label29.Text = "IdPonque"
-        '
-        'GBox_Variables
-        '
-        Me.GBox_Variables.Controls.Add(Me.Label29)
-        Me.GBox_Variables.Controls.Add(Me.TxtIdPastel)
-        Me.GBox_Variables.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.GBox_Variables.Location = New System.Drawing.Point(30, 319)
-        Me.GBox_Variables.Name = "GBox_Variables"
-        Me.GBox_Variables.Size = New System.Drawing.Size(120, 37)
-        Me.GBox_Variables.TabIndex = 31
-        Me.GBox_Variables.TabStop = False
-        Me.GBox_Variables.Text = "Variables"
         '
         'Pastel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(565, 399)
+        Me.ClientSize = New System.Drawing.Size(565, 417)
+        Me.Controls.Add(Me.TxtIdPastel)
+        Me.Controls.Add(Me.Label29)
         Me.Controls.Add(Me.GBox_Pastel)
         Me.Name = "Pastel"
         Me.Text = "Pastel"
@@ -483,9 +470,8 @@ Partial Class Pastel
         Me.GBox_Pastel.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.GBox_Variables.ResumeLayout(False)
-        Me.GBox_Variables.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GBox_Pastel As System.Windows.Forms.GroupBox
@@ -526,5 +512,4 @@ Partial Class Pastel
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TxtIdPastel As System.Windows.Forms.TextBox
     Friend WithEvents Label29 As System.Windows.Forms.Label
-    Friend WithEvents GBox_Variables As System.Windows.Forms.GroupBox
 End Class

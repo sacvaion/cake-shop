@@ -55,18 +55,6 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abono.Designer.vb">
-      <DependentUpon>Abono.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Abono.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BuscarAbono.Designer.vb">
-      <DependentUpon>BuscarAbono.vb</DependentUpon>
-    </Compile>
-    <Compile Include="BuscarAbono.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="BuscarCliente.Designer.vb">
       <DependentUpon>BuscarCliente.vb</DependentUpon>
     </Compile>
@@ -115,12 +103,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Abono.resx">
-      <DependentUpon>Abono.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BuscarAbono.resx">
-      <DependentUpon>BuscarAbono.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BuscarCliente.resx">
       <DependentUpon>BuscarCliente.vb</DependentUpon>
     </EmbeddedResource>

@@ -35,7 +35,7 @@ Public Class Pastel
         End If
 
         If Trim(TxtCubierta.Text) = "" Then
-            MsgBox("Por favor, ingrese la cubierta del pastel", MsgBoxStyle.Exclamation, "REGISTRO SIN NOMBRE")
+            MsgBox("Por favor, ingrese el nombre del pastel", MsgBoxStyle.Exclamation, "REGISTRO SIN NOMBRE")
             TxtCubierta.Focus()
             Exit Sub
         End If
@@ -77,6 +77,5 @@ Public Class Pastel
     Private Sub Pastel_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim obj As New Neg_Pastel
         TxtIdPastel.Text = obj.Autonumerico
-        GBox_Variables.Visible = False
     End Sub
 End Class

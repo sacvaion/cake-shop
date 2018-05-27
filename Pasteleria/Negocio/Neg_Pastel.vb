@@ -74,7 +74,7 @@ Public Class Neg_Pastel
             If c.rs.Read Then
                 obj.Pastel_Id = c.rs("Pastel_Id")
                 obj.Pastel_Nombre = c.rs("Pastel_Nombre")
-                obj.Pastel_Precio = Format(c.rs("Pastel_Precio"), "$ #,#0.#0")
+                obj.Pastel_Precio = c.rs("Pastel_Precio")
                 obj.Pastel_NumPers = c.rs("Pastel_NumPers")
                 obj.Pastel_Detalle = c.rs("Pastel_Detalle")
                 obj.Pastel_Forma = c.rs("Pastel_Forma")
@@ -108,11 +108,11 @@ Public Class Neg_Pastel
         Dim pp As String = ""
 
         Try
-            pp = "select * from pastel where Pastel_Nombre like '%" & palabra & "%' or Pastel_NumPers like '%" & palabra & "%'"
+            pp = "select * from pastel where Pastel_Nombre like '%" & palabra & "%'" '" or Marca_Modelo like '%" & palabra & "%'"
             c.consultar(pp)
             obj.Items.Clear()
             While c.rs.Read
-                obj.Items.Add(Format(CInt(c.rs("Pastel_Id")), "000") & "  " & Mid(c.rs("Pastel_Nombre") & Space(20), 1, 20) & "  " & Mid(c.rs("Pastel_Forma") & Space(10), 1, 10) & "   " & Mid(Format(c.rs("Pastel_Precio"), "$ #,#0.#0") & Space(10), 1, 10) & "   " & c.rs("Pastel_NumPers"))
+                obj.Items.Add(Format(CInt(c.rs("Pastel_Id")), "000") & "  " & Mid(c.rs("Pastel_Nombre") & Space(20), 1, 20) & "  " & Mid(c.rs("Pastel_Forma") & Space(10), 1, 10) & "   " & Mid(c.rs("Pastel_Precio") & Space(10), 1, 10) & "   " & c.rs("Pastel_NumPers"))
             End While
             c.rs.Close()
         Catch ex As Exception
