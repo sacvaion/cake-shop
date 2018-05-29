@@ -148,7 +148,7 @@ Partial Class Abono
         Me.TxtIdAbono.BackColor = System.Drawing.SystemColors.ButtonShadow
         Me.TxtIdAbono.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtIdAbono.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.TxtIdAbono.Location = New System.Drawing.Point(435, 12)
+        Me.TxtIdAbono.Location = New System.Drawing.Point(180, 277)
         Me.TxtIdAbono.Name = "TxtIdAbono"
         Me.TxtIdAbono.ReadOnly = True
         Me.TxtIdAbono.Size = New System.Drawing.Size(80, 34)
@@ -169,7 +169,7 @@ Partial Class Abono
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(525, 332)
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.TxtIdAbono)

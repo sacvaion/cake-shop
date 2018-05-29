@@ -74,7 +74,7 @@ Public Class Neg_Pastel
             If c.rs.Read Then
                 obj.Pastel_Id = c.rs("Pastel_Id")
                 obj.Pastel_Nombre = c.rs("Pastel_Nombre")
-                obj.Pastel_Precio = c.rs("Pastel_Precio")
+                obj.Pastel_Precio = Format(c.rs("Pastel_Precio"), "$ #,#0.#0")
                 obj.Pastel_NumPers = c.rs("Pastel_NumPers")
                 obj.Pastel_Detalle = c.rs("Pastel_Detalle")
                 obj.Pastel_Forma = c.rs("Pastel_Forma")

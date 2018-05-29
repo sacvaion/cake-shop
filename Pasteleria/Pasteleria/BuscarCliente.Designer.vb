@@ -26,6 +26,7 @@ Partial Class BuscarCliente
         Me.TxtBuscar = New System.Windows.Forms.TextBox
         Me.BtnBuscar = New System.Windows.Forms.Button
         Me.ListBox1 = New System.Windows.Forms.ListBox
+        Me.ListBox2 = New System.Windows.Forms.ListBox
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -36,7 +37,7 @@ Partial Class BuscarCliente
         Me.GroupBox1.Font = New System.Drawing.Font("Comic Sans MS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 13)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(748, 100)
+        Me.GroupBox1.Size = New System.Drawing.Size(940, 100)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Por Favor escriba el nombre del cliente"
@@ -64,16 +65,31 @@ Partial Class BuscarCliente
         Me.ListBox1.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 18
-        Me.ListBox1.Location = New System.Drawing.Point(12, 128)
+        Me.ListBox1.Location = New System.Drawing.Point(12, 176)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(748, 238)
+        Me.ListBox1.Size = New System.Drawing.Size(940, 346)
         Me.ListBox1.TabIndex = 1
+        '
+        'ListBox2
+        '
+        Me.ListBox2.BackColor = System.Drawing.Color.Navy
+        Me.ListBox2.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListBox2.ForeColor = System.Drawing.SystemColors.Window
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.ItemHeight = 18
+        Me.ListBox2.Items.AddRange(New Object() {"Cod  Cliente                         Direccion                        N.Telefonic" & _
+                        "o"})
+        Me.ListBox2.Location = New System.Drawing.Point(12, 141)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(940, 22)
+        Me.ListBox2.TabIndex = 6
         '
         'BuscarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(772, 381)
+        Me.ClientSize = New System.Drawing.Size(964, 565)
+        Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "BuscarCliente"
@@ -87,4 +103,5 @@ Partial Class BuscarCliente
     Friend WithEvents BtnBuscar As System.Windows.Forms.Button
     Friend WithEvents TxtBuscar As System.Windows.Forms.TextBox
     Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
+    Friend WithEvents ListBox2 As System.Windows.Forms.ListBox
 End Class

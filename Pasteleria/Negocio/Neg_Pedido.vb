@@ -6,6 +6,13 @@ Public Class Neg_Pedido
     Public Pedido_FechaPedido As String
     Public Pedido_FechaEntrega As String
     Public Pedido_Comentario As String
+    Public Pedido_Id_Cliente As String
+    Public Pedido_NumMesas As String
+    Public Pedido_Usuario As String
+    Public Pedido_Deposito As String
+    Public Pedido_HoraEntrega As String
+
+
 
     Function ExistePedido(ByVal campo As String, ByVal Valor_campo As String) As String
         Dim c As New Cls_Conexion
@@ -43,12 +50,12 @@ Public Class Neg_Pedido
                     Return ""
                 Else
                     'si existe, agregamos la modificacion
-                    consulta = "update Pedido set Pedido_Id = '" & obj.Pedido_Id & "',Pedido_id_Pastel = '" & obj.Pedido_id_Pastel & "',Pedido_FechaPedido = '" & obj.Pedido_FechaPedido & "',Pedido_FechaEntrega= '" & obj.Pedido_FechaEntrega & "',Pedido_Comentario='" & obj.Pedido_Comentario & "'where Pedido_Id = " & obj.Pedido_Id
+                    consulta = "update Pedido set Pedido_Id = '" & obj.Pedido_Id & "',Pedido_id_Pastel = '" & obj.Pedido_Id_Pastel & "',Pedido_Id_Cliente = " & obj.Pedido_Id_Cliente & ",Pedido_FechaPedido = '" & obj.Pedido_FechaPedido & "',Pedido_FechaEntrega= '" & obj.Pedido_FechaEntrega & "',Pedido_HoraEntrega = '" & obj.Pedido_HoraEntrega & "',Pedido_NumMesas = " & obj.Pedido_NumMesas & ",Pedido_Deposito = " & obj.Pedido_Deposito & ",Pedido_Comentario='" & obj.Pedido_Comentario & "',Pedido_Usuario = '" & obj.Pedido_Usuario & "'where Pedido_Id = " & obj.Pedido_Id
                 End If
 
             Else
                 'si no existe, agregamos el registro
-                consulta = "insert into Pedido values('" & obj.Pedido_Id & "','" & obj.Pedido_id_Pastel & "','" & obj.Pedido_FechaPedido & "','" & obj.Pedido_FechaEntrega & "','" & obj.Pedido_Comentario & "')"
+                consulta = "insert into Pedido values('" & obj.Pedido_Id & "','" & obj.Pedido_Id_Pastel & "','" & obj.Pedido_Id_Cliente & "','" & obj.Pedido_FechaPedido & "','" & obj.Pedido_FechaEntrega & "','" & obj.Pedido_HoraEntrega & "','" & obj.Pedido_NumMesas & "','" & obj.Pedido_Deposito & "','" & obj.Pedido_Comentario & "','" & obj.Pedido_Usuario & "')"
 
             End If
 
@@ -71,15 +78,25 @@ Public Class Neg_Pedido
             If c.rs.Read Then
                 obj.Pedido_Id = c.rs("Pedido_Id")
                 obj.Pedido_Id_Pastel = c.rs("Pedido_id_Pastel")
+                obj.Pedido_Id_Cliente = c.rs("Pedido_id_Cliente")
                 obj.Pedido_FechaPedido = c.rs("Pedido_FechaPedido")
                 obj.Pedido_FechaEntrega = c.rs("Pedido_FechaEntrega")
+                obj.Pedido_NumMesas = c.rs("Pedido_NumMesas")
                 obj.Pedido_Comentario = c.rs("Pedido_Comentario")
+                obj.Pedido_Deposito = c.rs("Pedido_Deposito")
+                obj.Pedido_Usuario = c.rs("Pedido_Usuario")
+                obj.Pedido_HoraEntrega = c.rs("Pedido_HoraEntrega")
             Else
                 obj.Pedido_Id = "-1"
                 obj.Pedido_Id_Pastel = "NO EXISTE"
+                obj.Pedido_Id_Cliente = "NO EXISTE"
                 obj.Pedido_FechaPedido = "NO EXISTE"
                 obj.Pedido_FechaEntrega = "NO EXISTE"
+                obj.Pedido_NumMesas = "NO EXISTE"
                 obj.Pedido_Comentario = "NO EXISTE"
+                obj.Pedido_Deposito = "NO EXISTE"
+                obj.Pedido_Usuario = "NO EXISTE"
+                obj.Pedido_HoraEntrega = "NO EXISTE"
             End If
             c.rs.Close()
             Return obj
@@ -89,12 +106,17 @@ Public Class Neg_Pedido
             obj.Pedido_FechaPedido = ex.Message
             obj.Pedido_FechaEntrega = ex.Message
             obj.Pedido_Comentario = ex.Message
+            obj.Pedido_Id_Cliente = ex.Message
+            obj.Pedido_NumMesas = ex.Message
+            obj.Pedido_Deposito = ex.Message
+            obj.Pedido_Usuario = ex.Message
+            obj.Pedido_HoraEntrega = ex.Message
             Return obj
         End Try
 
     End Function
 
-    Sub ListarCliente(ByVal palabra As String, ByVal obj As ListBox)
+    Sub ListarPedido(ByVal palabra As String, ByVal obj As ListBox)
         Dim c As New Cls_Conexion
         Dim pp As String = ""
 
@@ -103,7 +125,7 @@ Public Class Neg_Pedido
             c.consultar(pp)
             obj.Items.Clear()
             While c.rs.Read
-                obj.Items.Add(Format(CInt(c.rs("Pedido_Id")), "000") & "  " & Format(CInt(c.rs("Pedido_Id_Pastel")), "000") & "" & Mid(c.rs("Pedido_Nombre_Cliente") & Space(30), 1, 30) & "  " & Mid(c.rs("Pedido_FechaPedido") & Space(30), 1, 30) & "   " & c.rs("Pedido_FechaEntrega"))
+                obj.Items.Add(Format(CInt(c.rs("Pedido_Id")), "000") & "  " & Format(CInt(c.rs("Pedido_Id_Pastel")), "000") & "" & Mid(c.rs("Pedido_Id_Cliente") & Space(30), 1, 30) & "  " & Mid(c.rs("Pedido_FechaPedido") & Space(30), 1, 30) & "   " & c.rs("Pedido_FechaEntrega"))
             End While
             c.rs.Close()
         Catch ex As Exception

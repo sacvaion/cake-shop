@@ -72,6 +72,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Neg_Abono.vb" />
     <Compile Include="Neg_Client.vb" />
     <Compile Include="Neg_Pastel.vb" />
     <Compile Include="Neg_Pedido.vb" />
