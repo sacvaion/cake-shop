@@ -77,5 +77,6 @@ Public Class Pastel
     Private Sub Pastel_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim obj As New Neg_Pastel
         TxtIdPastel.Text = obj.Autonumerico
+        GBox_Variables.Visible = False
     End Sub
 End Class

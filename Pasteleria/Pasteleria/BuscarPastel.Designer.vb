@@ -77,7 +77,7 @@ Partial Class BuscarPastel
         Me.ListBox2.ForeColor = System.Drawing.SystemColors.Window
         Me.ListBox2.FormattingEnabled = True
         Me.ListBox2.ItemHeight = 18
-        Me.ListBox2.Items.AddRange(New Object() {"Cod  Pastel                Forma        Precio    N.Pers"})
+        Me.ListBox2.Items.AddRange(New Object() {"Cod  Pastel                Forma           Precio    N.Pers"})
         Me.ListBox2.Location = New System.Drawing.Point(9, 127)
         Me.ListBox2.Name = "ListBox2"
         Me.ListBox2.Size = New System.Drawing.Size(651, 22)

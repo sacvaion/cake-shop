@@ -67,7 +67,7 @@ Partial Class BuscarPedido
         Me.ListBox1.ItemHeight = 18
         Me.ListBox1.Location = New System.Drawing.Point(15, 150)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(887, 328)
+        Me.ListBox1.Size = New System.Drawing.Size(1022, 454)
         Me.ListBox1.TabIndex = 4
         '
         'ListBox2
@@ -77,18 +77,18 @@ Partial Class BuscarPedido
         Me.ListBox2.ForeColor = System.Drawing.SystemColors.Window
         Me.ListBox2.FormattingEnabled = True
         Me.ListBox2.ItemHeight = 18
-        Me.ListBox2.Items.AddRange(New Object() {"N.Ped  Cliente            F. Pedido    F. Entrega    Valor    T.Abonos  Deposito " & _
-                        " Debe"})
+        Me.ListBox2.Items.AddRange(New Object() {"N.Ped  Cliente            F. Pedido    F. Entrega      Valor       T.Abonos     D" & _
+                        "eposito    Debe"})
         Me.ListBox2.Location = New System.Drawing.Point(15, 118)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(887, 22)
+        Me.ListBox2.Size = New System.Drawing.Size(1022, 22)
         Me.ListBox2.TabIndex = 5
         '
         'BuscarPedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(908, 486)
+        Me.ClientSize = New System.Drawing.Size(1049, 622)
         Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ListBox1)

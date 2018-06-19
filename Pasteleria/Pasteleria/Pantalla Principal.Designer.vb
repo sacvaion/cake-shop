@@ -26,10 +26,6 @@ Partial Class Pasteleria
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.PictureBox2 = New System.Windows.Forms.PictureBox
         Me.AxShockwaveFlash1 = New AxShockwaveFlashObjects.AxShockwaveFlash
-        Me.Label18 = New System.Windows.Forms.Label
-        Me.Label29 = New System.Windows.Forms.Label
-        Me.TxtIdCliente = New System.Windows.Forms.TextBox
-        Me.TxtIdPastel = New System.Windows.Forms.TextBox
         Me.Label2 = New System.Windows.Forms.Label
         Me.Dirección = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
@@ -92,13 +88,18 @@ Partial Class Pasteleria
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
         Me.GBox_Pedido = New System.Windows.Forms.GroupBox
         Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker
-        Me.TxtIdAbono = New System.Windows.Forms.TextBox
-        Me.Label30 = New System.Windows.Forms.Label
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AgregarPastelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.BuscarPedidoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AbonoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.GBoxVariables = New System.Windows.Forms.GroupBox
+        Me.TxtIdAbono = New System.Windows.Forms.TextBox
+        Me.Label30 = New System.Windows.Forms.Label
+        Me.TxtIdPastel = New System.Windows.Forms.TextBox
+        Me.TxtIdCliente = New System.Windows.Forms.TextBox
+        Me.Label29 = New System.Windows.Forms.Label
+        Me.Label18 = New System.Windows.Forms.Label
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AxShockwaveFlash1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,6 +108,7 @@ Partial Class Pasteleria
         Me.GBox_Pastel.SuspendLayout()
         Me.GBox_Pedido.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.GBoxVariables.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -141,44 +143,6 @@ Partial Class Pasteleria
         Me.AxShockwaveFlash1.OcxState = CType(resources.GetObject("AxShockwaveFlash1.OcxState"), System.Windows.Forms.AxHost.State)
         Me.AxShockwaveFlash1.Size = New System.Drawing.Size(179, 65)
         Me.AxShockwaveFlash1.TabIndex = 22
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(917, 14)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(48, 13)
-        Me.Label18.TabIndex = 23
-        Me.Label18.Text = "IdCliente"
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(917, 33)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(53, 13)
-        Me.Label29.TabIndex = 24
-        Me.Label29.Text = "IdPonque"
-        '
-        'TxtIdCliente
-        '
-        Me.TxtIdCliente.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.TxtIdCliente.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.TxtIdCliente.Location = New System.Drawing.Point(978, 7)
-        Me.TxtIdCliente.Name = "TxtIdCliente"
-        Me.TxtIdCliente.ReadOnly = True
-        Me.TxtIdCliente.Size = New System.Drawing.Size(50, 20)
-        Me.TxtIdCliente.TabIndex = 26
-        '
-        'TxtIdPastel
-        '
-        Me.TxtIdPastel.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.TxtIdPastel.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.TxtIdPastel.Location = New System.Drawing.Point(978, 30)
-        Me.TxtIdPastel.Name = "TxtIdPastel"
-        Me.TxtIdPastel.ReadOnly = True
-        Me.TxtIdPastel.Size = New System.Drawing.Size(50, 20)
-        Me.TxtIdPastel.TabIndex = 28
         '
         'Label2
         '
@@ -837,25 +801,6 @@ Partial Class Pasteleria
         Me.DateTimePicker3.Size = New System.Drawing.Size(161, 30)
         Me.DateTimePicker3.TabIndex = 31
         '
-        'TxtIdAbono
-        '
-        Me.TxtIdAbono.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.TxtIdAbono.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.TxtIdAbono.Location = New System.Drawing.Point(863, 11)
-        Me.TxtIdAbono.Name = "TxtIdAbono"
-        Me.TxtIdAbono.ReadOnly = True
-        Me.TxtIdAbono.Size = New System.Drawing.Size(50, 20)
-        Me.TxtIdAbono.TabIndex = 30
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(802, 14)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(47, 13)
-        Me.Label30.TabIndex = 29
-        Me.Label30.Text = "IdAbono"
-        '
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -891,18 +836,85 @@ Partial Class Pasteleria
         Me.AbonoToolStripMenuItem.Size = New System.Drawing.Size(186, 26)
         Me.AbonoToolStripMenuItem.Text = "Agregar Abono"
         '
+        'GBoxVariables
+        '
+        Me.GBoxVariables.Controls.Add(Me.TxtIdAbono)
+        Me.GBoxVariables.Controls.Add(Me.Label30)
+        Me.GBoxVariables.Controls.Add(Me.TxtIdPastel)
+        Me.GBoxVariables.Controls.Add(Me.TxtIdCliente)
+        Me.GBoxVariables.Controls.Add(Me.Label29)
+        Me.GBoxVariables.Controls.Add(Me.Label18)
+        Me.GBoxVariables.Location = New System.Drawing.Point(773, 7)
+        Me.GBoxVariables.Name = "GBoxVariables"
+        Me.GBoxVariables.Size = New System.Drawing.Size(234, 63)
+        Me.GBoxVariables.TabIndex = 32
+        Me.GBoxVariables.TabStop = False
+        Me.GBoxVariables.Text = "Variables"
+        '
+        'TxtIdAbono
+        '
+        Me.TxtIdAbono.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TxtIdAbono.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.TxtIdAbono.Location = New System.Drawing.Point(60, 17)
+        Me.TxtIdAbono.Name = "TxtIdAbono"
+        Me.TxtIdAbono.ReadOnly = True
+        Me.TxtIdAbono.Size = New System.Drawing.Size(50, 20)
+        Me.TxtIdAbono.TabIndex = 36
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(7, 20)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(47, 13)
+        Me.Label30.TabIndex = 35
+        Me.Label30.Text = "IdAbono"
+        '
+        'TxtIdPastel
+        '
+        Me.TxtIdPastel.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TxtIdPastel.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.TxtIdPastel.Location = New System.Drawing.Point(175, 36)
+        Me.TxtIdPastel.Name = "TxtIdPastel"
+        Me.TxtIdPastel.ReadOnly = True
+        Me.TxtIdPastel.Size = New System.Drawing.Size(50, 20)
+        Me.TxtIdPastel.TabIndex = 34
+        '
+        'TxtIdCliente
+        '
+        Me.TxtIdCliente.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TxtIdCliente.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.TxtIdCliente.Location = New System.Drawing.Point(175, 13)
+        Me.TxtIdCliente.Name = "TxtIdCliente"
+        Me.TxtIdCliente.ReadOnly = True
+        Me.TxtIdCliente.Size = New System.Drawing.Size(50, 20)
+        Me.TxtIdCliente.TabIndex = 33
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(114, 39)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(53, 13)
+        Me.Label29.TabIndex = 32
+        Me.Label29.Text = "IdPonque"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(114, 20)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(48, 13)
+        Me.Label18.TabIndex = 31
+        Me.Label18.Text = "IdCliente"
+        '
         'Pasteleria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(1018, 689)
-        Me.Controls.Add(Me.TxtIdAbono)
-        Me.Controls.Add(Me.Label30)
-        Me.Controls.Add(Me.TxtIdPastel)
-        Me.Controls.Add(Me.TxtIdCliente)
-        Me.Controls.Add(Me.Label29)
-        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.GBoxVariables)
         Me.Controls.Add(Me.AxShockwaveFlash1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
@@ -925,6 +937,8 @@ Partial Class Pasteleria
         Me.GBox_Pedido.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.GBoxVariables.ResumeLayout(False)
+        Me.GBoxVariables.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -932,10 +946,6 @@ Partial Class Pasteleria
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents AxShockwaveFlash1 As AxShockwaveFlashObjects.AxShockwaveFlash
-    Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents Label29 As System.Windows.Forms.Label
-    Friend WithEvents TxtIdCliente As System.Windows.Forms.TextBox
-    Friend WithEvents TxtIdPastel As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Dirección As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -998,12 +1008,17 @@ Partial Class Pasteleria
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents GBox_Pedido As System.Windows.Forms.GroupBox
     Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents TxtIdAbono As System.Windows.Forms.TextBox
-    Friend WithEvents Label30 As System.Windows.Forms.Label
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents OpcionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AgregarPastelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BuscarPedidoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AbonoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GBoxVariables As System.Windows.Forms.GroupBox
+    Friend WithEvents TxtIdAbono As System.Windows.Forms.TextBox
+    Friend WithEvents Label30 As System.Windows.Forms.Label
+    Friend WithEvents TxtIdPastel As System.Windows.Forms.TextBox
+    Friend WithEvents TxtIdCliente As System.Windows.Forms.TextBox
+    Friend WithEvents Label29 As System.Windows.Forms.Label
+    Friend WithEvents Label18 As System.Windows.Forms.Label
 
 End Class

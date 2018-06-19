@@ -66,14 +66,14 @@ Public Class Neg_Abono
         Dim obj As New Neg_Abono
 
         Try
-            consulta = "Select * From Abono where Abono_Id= " & Cod
+            consulta = "SELECT Max(Abono_Id)As Id,Abono_Id_Pedido,sum(Abono_Valor) as VTotal,Min(Abono_Saldo) as Saldo,Abono_Fecha FROM `Abono` WHERE Abono_Id_Pedido=" & Cod & " Group By Abono_Id_Pedido"
             c.consultar(consulta)
             If c.rs.Read Then
-                obj.Abono_Id = c.rs("Pastel_Id")
-                obj.Abono_Id_Pedido = c.rs("Pastel_Nombre")
-                obj.Abono_Valor = Format(c.rs("Pastel_Precio"), "$ #,#0.#0")
-                obj.Abono_Saldo = c.rs("Pastel_NumPers")
-                obj.Abono_Fecha = c.rs("Pastel_Detalle")
+                obj.Abono_Id = c.rs("Id")
+                obj.Abono_Id_Pedido = c.rs("Abono_Id_Pedido")
+                obj.Abono_Valor = c.rs("VTotal")
+                obj.Abono_Saldo = c.rs("Saldo")
+                obj.Abono_Fecha = c.rs("Abono_Fecha")
             Else
 
                 obj.Abono_Id = "-1"
@@ -104,7 +104,7 @@ Public Class Neg_Abono
             c.consultar(pp)
             obj.Items.Clear()
             While c.rs.Read
-                obj.Items.Add(Format(CInt(c.rs("Pedido_Id")), "000") & "  " & Mid(c.rs("Cliente_Nombre") & Space(30), 1, 30) & "  " & Mid(c.rs("Abono_Fecha") & Space(12), 1, 12) & " " & Format(c.rs("Abono_Valor"), "$ #,#0.#0") & "     " & Format(c.rs("Abono_Saldo"), "$ #,#0.#0"))
+                obj.Items.Add(Format(CInt(c.rs("Pedido_Id")), "000") & "  " & Mid(c.rs("Cliente_Nombre") & Space(30), 1, 30) & "  " & Mid(c.rs("Abono_Fecha") & Space(12), 1, 12) & " " & Mid(Format(c.rs("Abono_Valor"), "$ #,#0.#0") & Space(12), 1, 12) & "     " & Format(c.rs("Abono_Saldo"), "$ #,#0.#0"))
             End While
             c.rs.Close()
         Catch ex As Exception

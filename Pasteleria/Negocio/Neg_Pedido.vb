@@ -121,11 +121,11 @@ Public Class Neg_Pedido
         Dim pp As String = ""
 
         Try
-            pp = "select * from Pedido where Pedido_id like '%" & palabra & "%'" '" or Marca_Modelo like '%" & palabra & "%'"
+            pp = "SELECT Pedido_Id,Cliente_Nombre,Pedido_FechaPedido,Pedido_FechaEntrega,Pastel_Precio,sum(Abono_Valor)AS TAbono,Pedido_Deposito, min(Abono_Saldo) as Saldo FROM Pedido,Cliente,Abono,Pastel WHERE Pedido_Id_Cliente = Cliente_Id and Abono_Id_Pedido = Pedido_Id and Pastel_Id = Pedido_Id_Pastel and Pedido_Id like '%" & palabra & "%' group by Abono_Id_Pedido"
             c.consultar(pp)
             obj.Items.Clear()
             While c.rs.Read
-                obj.Items.Add(Format(CInt(c.rs("Pedido_Id")), "000") & "  " & Format(CInt(c.rs("Pedido_Id_Pastel")), "000") & "" & Mid(c.rs("Pedido_Id_Cliente") & Space(30), 1, 30) & "  " & Mid(c.rs("Pedido_FechaPedido") & Space(30), 1, 30) & "   " & c.rs("Pedido_FechaEntrega"))
+                obj.Items.Add(Format(CInt(c.rs("Pedido_Id")), "000") & " " & Mid(c.rs("Cliente_Nombre") & Space(20), 1, 20) & "  " & Mid(c.rs("Pedido_FechaPedido") & Space(12), 1, 12) & " " & Mid(c.rs("Pedido_FechaEntrega") & Space(12), 1, 12) & " " & Mid(Format(c.rs("Pastel_Precio"), "$ #,#0.#0") & Space(10), 1, 10) & "   " & Mid(Format(c.rs("TAbono"), "$ #,#0.#0") & Space(10), 1, 10) & "   " & Mid(Format(c.rs("Pedido_Deposito"), "$ #,#0.#0") & Space(10), 1, 10) & "   " & Mid(Format(c.rs("Saldo"), "$ #,#0.#0") & Space(10), 1, 10))
             End While
             c.rs.Close()
         Catch ex As Exception

@@ -5,7 +5,6 @@ Public Class Pasteleria
     Private Sub Form_Marca_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
         Dim m As New Neg_Client
         Dim p As New Neg_Pastel
-        Dim A As New Neg_Abono
         If ClienteBuscado <> "" Then
             TxtIdCliente.Text = ClienteBuscado
             m = m.extraerDatos(ClienteBuscado)
@@ -14,7 +13,6 @@ Public Class Pasteleria
             TxtDireCliente.Text = m.clientDireccion
             TxtTelCliente.Text = m.clientTelefono
         End If
-
         If pastelBuscado <> "" Then
             TxtIdPastel.Text = pastelBuscado
             p = p.extraerDatos(pastelBuscado)
@@ -25,15 +23,13 @@ Public Class Pasteleria
             TxtNumPersonas.Text = p.Pastel_NumPers
             TxtValorTotal.Text = p.Pastel_Precio
         End If
-
-
-
     End Sub
 
     Private Sub Pasteleria_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Text = "****PASTELERIA SANTANDER***"
         AxShockwaveFlash1.LoadMovie(0, Path.GetFullPath("LogoPastSantander.swf"))
         BtnNuevo_Click(sender, e)
+        GBoxVariables.Visible = False
     End Sub
 
     Private Sub BtnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnGuardar.Click
