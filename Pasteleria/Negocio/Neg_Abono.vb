@@ -71,8 +71,8 @@ Public Class Neg_Abono
             If c.rs.Read Then
                 obj.Abono_Id = c.rs("Id")
                 obj.Abono_Id_Pedido = c.rs("Abono_Id_Pedido")
-                obj.Abono_Valor = c.rs("VTotal")
-                obj.Abono_Saldo = c.rs("Saldo")
+                obj.Abono_Valor = Format(c.rs("VTotal"), "$ #,#0.#0")
+                obj.Abono_Saldo = Format(c.rs("Saldo"), "$ #,#0.#0")
                 obj.Abono_Fecha = c.rs("Abono_Fecha")
             Else
 
@@ -111,7 +111,7 @@ Public Class Neg_Abono
         End Try
     End Sub
 
-    Function Autonumerico() As String
+    Function autonumerico() As String
         Dim c As New Cls_Conexion
         Dim consulta As String
 

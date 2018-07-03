@@ -35,7 +35,7 @@ Public Class Pastel
         End If
 
         If Trim(TxtCubierta.Text) = "" Then
-            MsgBox("Por favor, ingrese el nombre del pastel", MsgBoxStyle.Exclamation, "REGISTRO SIN NOMBRE")
+            MsgBox("Por favor, ingrese la cubierta del pastel", MsgBoxStyle.Exclamation, "REGISTRO SIN NOMBRE")
             TxtCubierta.Focus()
             Exit Sub
         End If

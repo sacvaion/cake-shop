@@ -7,8 +7,8 @@ Public Class Abono
 
         obj.Abono_Id = TxtIdAbono.Text
         obj.Abono_Id_Pedido = TxtIdPedido.Text
-        obj.Abono_Valor = TxtAbono.Text
-        obj.Abono_Saldo = obj.saldo(TxtSaldo.Text, TxtAbono.Text)
+        obj.Abono_Valor = Str(TxtAbono.Text)
+        obj.Abono_Saldo = obj.saldo(TxtSaldo.Text, Str(TxtAbono.Text))
         obj.Abono_Fecha = FechaParaMySQL(TxtFecha.Text)
 
         resp = obj.insertarAbono(obj)
